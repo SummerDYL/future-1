@@ -4,3 +4,5 @@ others/
 收益研究初步/
 用户画像/
 *.pdf
+libmysqlclient_r.so.16
+*.md
