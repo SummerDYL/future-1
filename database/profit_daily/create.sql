@@ -9,8 +9,5 @@ drop_profit double comment "平仓收益",
 hold_profit double comment "持仓收益",
 pos_profit double comment "正收益",
 nag_profit double comment "负收益",
-rate double comment "总收益率",
-pos_rate double comment "正收益率",
-nag_rate double comment "负收益率",
 primary key (account,code,date)
 );
