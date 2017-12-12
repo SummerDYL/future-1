@@ -35,3 +35,6 @@ update profit_daily set profit=drop_profit+hold_profit;
 insert into profit_daily (account,code,date,profit,drop_profit,hold_profit,pos_profit,neg_profit)
 select account,"all",date,sum(profit),sum(drop_profit),sum(hold_profit),sum(pos_profit),sum(neg_profit)
 from profit_daily group by account,date;
+
+--
+select "finish";
