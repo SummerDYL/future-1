@@ -6,3 +6,4 @@ others/
 *.pdf
 libmysqlclient_r.so.16
 *.md
+nohup.out
