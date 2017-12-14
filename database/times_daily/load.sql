@@ -1,7 +1,10 @@
--- 插入主键、总次数(没算交割的)
-insert into times_daily (account,code,date,times)
-select capital_account_new,vari_code,tradedate,count(*)
-from chengjiao group by capital_account_new,vari_code,tradedate;
+-- 从成交表插入主键
+insert into times_daily (account,code,date)
+select distinct capital_account_new,vari_code,tradedate from chengjiao;
+
+-- 从平仓表补充剩余的主键
+insert ignore into times_daily (account,code,date)
+select distinct capital_account_new,vari_code,tradedate from pingcang;
 
 -- 插入开仓次数
 update times_daily set open_times=(select count(*) from chengjiao
